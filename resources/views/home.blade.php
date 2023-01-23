@@ -25,7 +25,6 @@
                         <a href="/" style="color: lightpink;">Home</a>
                         <a href="/register">Register</a>
                         <a href="/login">Login</a>
-                        <a href="/user">User</a>
                         <a href="/payment">Payment</a>
                     </li>
                     <!-- <li>

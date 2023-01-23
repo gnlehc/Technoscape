@@ -22,7 +22,6 @@
                         <a href="/">Home</a>
                         <a href="/register" style="color: lightpink;">Register</a>
                         <a href="/login">Login</a>
-                        <a href="/user">User</a>
                         <a href="/payment">Payment</a>
                     </li>
                     <!-- <li>
@@ -33,8 +32,6 @@
         </nav>
     </section>
     <section class="payment">
-        <div class="error"></div>
-        <div class="error"></div>
         <div class="pay">
             <h2>Personal Information</h2>
             <form class="regist" action="/store-data" method="POST">

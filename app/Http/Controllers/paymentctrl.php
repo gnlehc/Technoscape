@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\image;
 use Illuminate\Http\Request;
 
 class paymentctrl extends Controller
@@ -10,16 +11,35 @@ class paymentctrl extends Controller
         return view("payment");
     }
     public function storePay(Request $request){
-        payap::create([
+        image::create([
             'Name' => $request->Name,
             'LName' => $request->LName,
             'Email' => $request->Email,
             'cardNum' => $request->cardNum,
+            'image' => $request->image,
         ]);
         return redirect('/payflow');
     }
     public function show(){
-        $pay = payap::all();
-        return view('payflow', compact('pay'));
+        $images = image::all();
+        return view('payflow', compact('images'));
+    }
+    public function editPay($id){
+        $img = image::findOrFail($id);
+        return view('editPay', compact('img'));
+    }
+    public function updatePay(Request $request, $id){
+        image::findOrFail($id)->update([
+            'Name' => $request->Name,
+            'LName' => $request->LName,
+            'Email' => $request->Email,
+            'cardNum' => $request->cardNum,
+            'image' => $request->image,
+        ]);
+        return redirect('/payflow');
+    }
+    public function deletePay($id){
+        image::destroy($id);
+            return redirect('payflow');
     }
 }

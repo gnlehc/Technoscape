@@ -19,7 +19,6 @@
 <body>
     <section>
         <nav>
-            <!-- <a href=""><img src="tlogo.png" alt=""></a> -->
             <div class="Logo">
                 <ul>
                     <li>
@@ -28,9 +27,6 @@
                         <a href="/login">Login</a>
                         <a href="/payment">payment</a>
                     </li>
-                    <!-- <li>
-                        <a href="login.html">Login</a>
-                    </li> -->
                 </ul>
             </div>
         </nav>
@@ -38,25 +34,14 @@
     <section>
         <div class="hello">
             <h1><b>Welcome!</b></h1>
-            {{-- @foreach ($accs as $accs) --}}
-            {{-- <div class="card" style="width: 18rem;"> --}}
-                {{-- <img src="..." class="card-img-top" alt="..."> --}}
-                {{-- <div class="card-body">
-                    <h4>Group 1</h4>
-                 <h2 class="card-title">{{$accs->Name}}</h2>
-                 <h2 class="card-title">{{$accs->Email}}</h2>
-                 <h2 class="card-title">{{$accs->password}}</h2>
-                 <h2 class="card-title">{{$accs->Pass}}</h2> --}}
-                  {{-- <a href="#" class="btn btn-primary">Go somewhere</a> --}}
-                {{-- </div>
-              </div> --}}
               <table class="table table-striped table-dark">
                 <thead>
                   <tr>
                     <th scope="col">Group Name</th>
+                    <th scope="col">Leader Name</th>
                     <th scope="col">Email</th>
-                    <th scope="col">Password</th>
-                    <th scope="col">Confirm Password</th>
+                    <th scope="col">Card Number</th>
+                    <th scope="col">Image</th>
                     <th scope="col">Edit</th>
                     <th scope="col">Delete</th>
                   </tr>
@@ -64,38 +49,23 @@
                 <tbody>
                     @csrf
                     @method('patch')
-                    @foreach($accs as $accs)
+                    @foreach($images as $images)
                   <tr>
-                    <td>{{$accs->Name}}</td>
-                    <td>{{$accs->Email}}</td>
-                    <td>{{$accs->password}}</td>
-                    <td>{{$accs->Pass}}</td>
-                    <td><a href="{{route('editData', $accs->id)}}" class="btn btn-success">Edit</a></td>
-                    {{-- <td><button class="btn btn-success">Edit</button></td>
-                    <td><button class="btn btn-danger">Delete</button></td> --}}
-                    <form action="{{route('delete', $accs->id)}}" method="POST">
+                    <td>{{$images->Name}}</td>
+                    <td>{{$images->LName}}</td>
+                    <td>{{$images->Email}}</td>
+                    <td>{{$images->cardNum}}</td>
+                    <td>{{$images->image}}</td>
+                    <td><a href="{{route('editPay', $images->id)}}" class="btn btn-success">Edit</a></td>
+                    <form action="{{route('deletePay', $images->id)}}" method="POST">
                       @csrf
                       @method('delete')
                       <td><button class="btn btn-danger">Delete</button></td>
                     </form>
                   </tr>
                   @endforeach
-                  {{-- <tr>
-                    <th scope="row">2</th>
-                    <td>Jacob</td>
-                    <td>Thornton</td>
-                    <td>@fat</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">3</th>
-                    <td>Larry</td>
-                    <td>the Bird</td>
-                    <td>@twitter</td>
-                  </tr>
-                </tbody> --}}
               </table>
         </div>
-        {{-- @endforeach --}}
     </section>
     <section class="footer">
         <div class="sm">

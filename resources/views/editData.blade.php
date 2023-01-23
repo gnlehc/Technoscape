@@ -12,7 +12,6 @@
     <link rel=”stylesheet” href=”https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css” />
 </head>
 <body>
-    <script src="register.js"></script>
     <section>
         <nav>
             <!-- <a href=""><img src="tlogo.png" alt=""></a> -->
@@ -22,7 +21,6 @@
                         <a href="/">Home</a>
                         <a href="/register" style="color: lightpink;">Register</a>
                         <a href="/login">Login</a>
-                        <a href="/user">User</a>
                         <a href="/payment">Payment</a>
                     </li>
                 </ul>
@@ -30,8 +28,6 @@
         </nav>
     </section>
     <section class="payment">
-        <div class="error"></div>
-        <div class="error"></div>
         <div class="pay">
             <h2>Personal Information</h2>
             <form action="{{route('update', $acc->id)}}" method="POST">

@@ -21,7 +21,6 @@
                         <a href="/">Home</a>
                         <a href="/register">Register</a>
                         <a href="/login" style="color: lightpink;">Login</a>
-                        <a href="/user">User</a>
                         <a href="/payment">Payment</a>
                     </li>
                     <!-- <li>
@@ -39,7 +38,7 @@
                 @csrf
             <div class="username">
                 <div class="input_box">
-                    <input type="email" placeholder="Email" id="Email" name="Email" @error('Email') Email is invalid @enderror required >
+                    <input type="email" placeholder="Email" id="Email" name="Email" required>
                     <i class="fa fa-envelope-o" style="color: whitesmoke; display: contents;"></i>
                     <!-- <i class="fa fa-check-circle" style="color: chartreuse"></i>
                     <i class="fa fa-exclamation-circle" style="color: crimson;"></i>

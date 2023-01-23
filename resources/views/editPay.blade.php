@@ -14,7 +14,6 @@
 <body>
     <section>
         <nav>
-            <!-- <a href=""><img src="tlogo.png" alt=""></a> -->
             <div class="Logo">
                 <ul>
                     <li>
@@ -23,9 +22,6 @@
                         <a href="/login">Login</a>
                         <a href="/payment" style="color: lightpink;">Payment</a>
                     </li>
-                    <!-- <li>
-                        <a href="login.html">Login</a>
-                    </li> -->
                 </ul>
             </div>
         </nav>
@@ -33,37 +29,39 @@
         <section>
             <div class="pay">
                 <h2>Payment</h2>
-                <form id="payment" action="/store-pay" method="POST">
+                <form id="payment" action="{{route('updatePay', $img->id)}}" method="POST">
                     @csrf
+                    @method('patch')
                     <div class="inputname">
                         <div class="input_box">
-                            <input type="text" placeholder="Group Name" name="Name" id="name" required>
+                            <input type="text" placeholder="Group Name" name="Name" id="name" value="{{$img->Name}}" required>
                             <i class="fa fa-users" style="color: whitesmoke;"></i>
                         </div>
                     </div>
                     <div class="inputname">
                         <div class="input_box">
-                            <input type="text" placeholder="Leader Name" name="LName" id="Lname" required>
+                            <input type="text" placeholder="Leader Name" name="LName" id="Lname" value="{{$img->LName}}" required>
                             <i class="fa fa-user icon" style="color: whitesmoke;"></i>
                         </div>
                     </div>
                     <div class="inputemail">
                         <div class="input_box">
-                            <input type="email" placeholder="Email" name="Email" id="Email" required>
+                            <input type="email" placeholder="Email" name="Email" id="Email" value="{{$img->Email}}" required>
                             <i class="fa fa-envelope-o" style="color: whitesmoke;"></i>
                         </div>
                         <div class="inputname">
                             <div class="input_box">
-                                <input type="text" placeholder="Card Number" name="cardNum" id="name" required>
+                                <input type="text" placeholder="Card Number" name="cardNum" id="name" value="{{$img->Email}}" required>
                                 <i class="fa fa-credit-card" style="color: whitesmoke"></i>
                             </div>
                         </div>
                         <div class="relative flex items-center min-h-screen justify-center overflow-hidden">
                             <form action="{{ route('image.store') }}" method="POST" class="shadow p-12" enctype="multipart/form-data">
                                 @csrf
+                                @method('patch')
                                 <label class="block mb-4">
                                     <span class="sr-only">Choose File</span>
-                                    <input type="file" name="image" 
+                                    <input type="file" name="image"  value="{{$img->image}}"
                                         class="block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100" />
                                     @error('image')
                                     <span class="text-red-600 text-sm">{{ $message }}</span>
