@@ -14,12 +14,14 @@ return new class extends Migration
     public function up()
     {
         Schema::create('accs', function (Blueprint $table) {
-            $table->id(); 
+            $table->id(); // primary key
             $table->string('Name');
             $table->string('Email');
             $table->string('password');
             $table->string('Pass');
-            $table->rememberToken();
+            // $table->unsignedBigInteger('user_id');
+            // $table->foreign('user_id')->references('id')->on('forkey');
+            // $table->rememberToken();
             $table->timestamps();
         });
     }

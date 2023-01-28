@@ -11,15 +11,22 @@ class loginctrl extends Controller
     }
 
     public function authenticate(Request $request){
+    /**
+     * Handle an authentication attempt.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+
         $creden = $request->validate([
-            'email' => ['required'],
+            'Email' => ['required', 'Email'],
             'password' => ['required']
         ]);
         dd('berhasil login!');
 
         if(Auth::attempt($creden)){
             $request->session()->regenerate();
-            return redirect()->intended('/dashboard');
+            return redirect()->intended('dashboard');
         }
 
         return back()->withErrors([

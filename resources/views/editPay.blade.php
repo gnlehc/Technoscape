@@ -29,7 +29,7 @@
         <section>
             <div class="pay">
                 <h2>Payment</h2>
-                <form id="payment" action="{{route('updatePay', $img->id)}}" method="POST">
+                <form id="payment" action="{{route('updatePay', $img->id)}}" method="POST"  enctype="multipart/form-data">
                     @csrf
                     @method('patch')
                     <div class="inputname">
@@ -51,23 +51,23 @@
                         </div>
                         <div class="inputname">
                             <div class="input_box">
-                                <input type="text" placeholder="Card Number" name="cardNum" id="name" value="{{$img->Email}}" required>
+                                <input type="text" placeholder="Card Number" name="cardNum" id="name" value="{{$img->cardNum}}" required>
                                 <i class="fa fa-credit-card" style="color: whitesmoke"></i>
                             </div>
                         </div>
                         <div class="relative flex items-center min-h-screen justify-center overflow-hidden">
-                            <form action="{{ route('image.store') }}" method="POST" class="shadow p-12" enctype="multipart/form-data">
-                                @csrf
+                            {{-- <form action="{{ route('image.store') }}" method="POST" class="shadow p-12" enctype="multipart/form-data"> --}}
+                                {{-- @csrf --}}
                                 @method('patch')
                                 <label class="block mb-4">
                                     <span class="sr-only">Choose File</span>
-                                    <input type="file" name="image"  value="{{$img->image}}"
+                                    <input type="file" name="image" value="{{$img->image}}" required
                                         class="block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100" />
                                     @error('image')
-                                    <span class="text-red-600 text-sm">{{ $message }}</span>
+                                    <div class="alert" role="alert" style="color: palevioletred" >{{ $message }}</div>
                                     @enderror
                                 </label>
-                            </form>
+                            {{-- </form> --}}
                         </div>
                         <div id="submit">
                             <button onclick="readData()">Confirm Payment</button>

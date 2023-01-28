@@ -55,7 +55,16 @@
                     <td>{{$images->LName}}</td>
                     <td>{{$images->Email}}</td>
                     <td>{{$images->cardNum}}</td>
-                    <td>{{$images->image}}</td>
+                    {{-- <td>{{$images->image}}</td> --}}
+                    {{-- <div class="card" style="width: 18rem">
+                    <img src="{{asset('/storage/paymentImage'.$images->image)}}" alt=""> 
+                    </div> --}}
+                    <td>
+                        <div class="card" style="width: 18rem;">
+                        <img class="card-img-top" src="{{asset('/storage/paymentImage/'.$images->image)}}" >
+                      </div>
+                    </td>
+                    
                     <td><a href="{{route('editPay', $images->id)}}" class="btn btn-success">Edit</a></td>
                     <form action="{{route('deletePay', $images->id)}}" method="POST">
                       @csrf

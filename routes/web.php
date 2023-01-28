@@ -15,7 +15,7 @@ Route::get('/', [homectrl::class, 'home']);
 Route::get('/user', [registerctrl::class, 'show']);
 Route::get('/register', [registerctrl::class, 'register']);
 Route::post('/store-data', [registerctrl::class, 'storeData']);
-Route::get('/login', [loginctrl::class, 'login'])->middleware('guest');
+Route::get('/login', [loginctrl::class, 'login'])->middleware();
 Route::post('/login', [loginctrl::class, 'authenticate']);
 Route::get('/dashboard', [dashboardctrl::class, 'dashboard']);
 

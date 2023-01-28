@@ -14,4 +14,8 @@ class accs extends Model
         'password',
         'Pass',
     ];
+
+    // public function forkey(){
+    //     return $this->belongsTo(forkey::class);
+    // }
 }

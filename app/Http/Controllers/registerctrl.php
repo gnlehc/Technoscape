@@ -11,6 +11,7 @@ class registerctrl extends Controller
     }
     
     public function storeData(Request $request){
+        
         accs::create([
             'Name' => $request->Name,
             'Email' => $request->Email,

@@ -11,12 +11,22 @@ class paymentctrl extends Controller
         return view("payment");
     }
     public function storePay(Request $request){
+
+        $validated = $request->validate([
+            // 'Name' => 'required|unique',
+            'image' => 'required|mimes:jpg,png'
+        ]);
+
+        $extension = $request->file('image')->getClientOriginalExtension();
+        // $filename = $request->file('image')->getClientOriginalName();
+        $filename = $request->judul . '_' . $request->LName . '.' . $extension;
+        $request->file('image')->storeAs('/public/paymentImage/', $filename);
         image::create([
             'Name' => $request->Name,
             'LName' => $request->LName,
             'Email' => $request->Email,
             'cardNum' => $request->cardNum,
-            'image' => $request->image,
+            'image' => $filename
         ]);
         return redirect('/payflow');
     }

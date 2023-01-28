@@ -37,6 +37,10 @@
     <section class="home">
         <h1> <b>Technoscape</b></h1>
         <h2>Hackathon</h2>
+        <p>Hackthon merupakan acara teknologi tahunan terbesar yang diselenggarakan oleh Bina Nusantara Computer Club (BNCC)
+            sebagai wadah untuk memberdayakan pengetahuan teknologi dan menghasilkan karya inovatif. Hackthon telah hadir sejak tahun
+            2018 dan tahun ini, Hackthon akan hadir dengan tiga rangkaian acara, yaitu Virtual Conference, Developer Workshop,
+            dan Hackathon 5.0.</p>
     </section>
         <section class="sponsor">
             <h2><b>Sponsors</b></h2>
