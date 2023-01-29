@@ -24,7 +24,7 @@ nav{
     padding-left: 6vw;
 }
 
-.logo ul li a{
+.logo a{
     color: whitesmoke;
     text-decoration: none;
     list-style: none;
@@ -33,7 +33,7 @@ nav{
     font-size: 1.1vw;
 } 
 
-.logo ul li a::after{
+.logo a::after{
     content: '';
     width: 0%;
     height: 2px;
@@ -42,16 +42,15 @@ nav{
     margin: auto;
     transition: 0.5s;
 }
-.logo ul li a:hover::after{
+.logo a:hover::after{
     width: 100%;
 }
 
-.logo ul li{
+.logo{
     position: relative;
     /* display: inline-block; */
     list-style: none;
     padding: 4px 16px;
-    margin-left: 100vh;
     text-align: right;
     
 }
