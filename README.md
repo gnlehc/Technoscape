@@ -6,11 +6,13 @@
 <p>5.Run php artisan migrate</p>
 <p>6.Run php artisan serve</p>
 
-<p></p>
+<p>===============================</p>
 
 <p>Laravel Breeze Installation</p>
 <p>composer require laravel/breeze --dev</p>
 <p>php artisan breeze:install</p>
 <p>Choose blade</p>
+
+<p>===============================</p>
 
 <p>php artisan storage:link</p>
