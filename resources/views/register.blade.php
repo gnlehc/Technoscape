@@ -12,7 +12,6 @@
     <link rel=”stylesheet” href=”https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css” />
 </head>
 <body>
-    <script src="register.js"></script>
     <section>
         <nav>
             <!-- <a href=""><img src="tlogo.png" alt=""></a> -->
@@ -24,9 +23,6 @@
                         <a href="/login">Login</a>
                         <a href="/payment">Payment</a>
                     </li>
-                    <!-- <li>
-                        <a href="login.html">Login</a>
-                    </li> -->
                 </ul>
             </div>
         </nav>
@@ -34,37 +30,29 @@
     <section class="payment">
         <div class="pay">
             <h2>Personal Information</h2>
-            <form class="regist" action="/store-data" method="POST">
+            <form class="regist" action="/create" method="POST">
                 @csrf
                 <div class="inputname">
                     <div class="input_box">
-                        <input type="text" placeholder="Group Name" name="Name" id="name" required>
+                        <input type="text" placeholder="Group Name" name="Name" id="name" value="{{Session::get('Name')}}" required>
                         <i class="fa fa-user icon" style="color: whitesmoke;"></i>
                     </div>
                 </div>
                 <div class="inputemail">
                     <div class="input_box">
-                        <input type="email" placeholder="Email" name="Email" id="Email" required>
+                        <input type="email" placeholder="Email" name="Email" value="{{Session::get('Email')}}" id="Email" required>
                         <i class="fa fa-envelope-o" style="color: whitesmoke;"></i>
                     </div>
             </div>
-            <!-- <div class="inputpass">
-                <div class="input-group" id="show_hide_password">
-                 <input class="form-control" name="password" type="password">
-                 <div class="input-group-addon">
-                 <a href=""><i class="fas fa-eye-slash" aria-hidden="true"></i> </a>
-                 </div>
-                </div>
-                </div> -->
             <div class="inputpass">
                 <div class="input_box">
-                    <input type="password" placeholder="Password" name="password" id="password" minlength=8 maxlength=15 required>
+                    <input type="password" placeholder="Password" name="password" id="password" required>
                     <i class="fa fa-eye" id="show-password" style="color: whitesmoke;"></i>
                 </div>
             </div>
             <div class="inputpass">
                 <div class="input_box">
-                    <input type="password" placeholder="Confirm Password" name="Pass" id="Pass" minlength=8 maxlength=15 required>
+                    <input type="password" placeholder="Confirm Password" name="Pass" id="Pass" required>
                     <i class="fa fa-eye" id="show-Pass" style="color: whitesmoke;"></i>
                 </div>
             </div>

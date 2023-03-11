@@ -1,16 +1,21 @@
 <?php
 
 namespace App\Http\Controllers;
+
+
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Session;
 
-class loginctrl extends Controller
+class Sessionctrl extends Controller
 {
     public function index(){
         return view("login");
+    }
+    public function registIndex(){
+        return view('register');
     }
     function login(Request $request){
         // Session::flash('name', $request->name);
@@ -24,12 +29,12 @@ class loginctrl extends Controller
             'password.required' => 'Password cannot be empty',
         ]);
         
-        $Login = [
+        $infoLogin = [
             'Email' => $request->Email,
             'password' => $request->password
         ];
 
-        if(Auth::attempt($Login)){
+        if(Auth::attempt($infoLogin)){
             return redirect('dashboard')->with("Welcome");
         }else{
             return redirect('login')->withErrors('Email or Password does not valid');
@@ -69,11 +74,11 @@ class loginctrl extends Controller
             'Pass' => Hash::make($request->Pass),
         ];
         User::create($account);
-        $Login = [
+        $infoLogin = [
             'Email' => $request->Email,
             'password' => $request->password
         ];
-        if(Auth::attempt($Login)){
+        if(Auth::attempt($infoLogin)){
             return redirect('dashboard')->with("Welcome", Auth::user()-> Name);
         }else{
             return redirect('register')->withErrors('Email or Password does not valid');

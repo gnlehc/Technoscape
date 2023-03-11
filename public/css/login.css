@@ -1,15 +1,14 @@
-*{
+* {
     margin: 0;
     padding: 0;
-    font-family: 'Poppins', sans-serif;
+    font-family: "Poppins", sans-serif;
 }
-.logo ul li{
+.logo ul li {
     text-align: right;
-    list-style: none; 
+    list-style: none;
     display: inline-block;
     /* color: whitesmoke; */
-} 
-
+}
 
 /* shadow hover social media icon */
 /* .sm ul li i:hover::before{
@@ -19,20 +18,24 @@
     box-shadow: 0px 10px 20px 5px rgba(0, 0, 0, 0.5);
     transform: translateY(-5px);
 } */
-body{
-    background-image: linear-gradient(rgba(100, 100, 100, 0.1), rgba(89, 89, 89, 0.1)), url("../css/bg.jpg");
+body {
+    background-image: linear-gradient(
+            rgba(100, 100, 100, 0.1),
+            rgba(89, 89, 89, 0.1)
+        ),
+        url("../css/bg.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center; 
+    align-items: center;
 }
 /* nav a img{
     width: 100px;
     padding-right: 160vh;
 }  */
-nav{
+nav {
     position: relative;
     display: flex;
     padding: 1% 3%;
@@ -40,10 +43,10 @@ nav{
     padding-top: 3vh;
     flex-direction: column;
     width: 100%;
-} 
+}
 
-.logo ul li a{
-     /* "personal informartion" */
+.logo ul li a {
+    /* "personal informartion" */
     color: whitesmoke;
     text-decoration: none;
     font-size: 2vh;
@@ -51,9 +54,9 @@ nav{
     display: inline-block;
     padding: 4px 16px;
     font-size: 1.1vw;
-} 
+}
 
-.logo ul li{
+.logo ul li {
     position: relative;
     display: inline-block;
     list-style: none;
@@ -61,8 +64,8 @@ nav{
     margin-left: 100vh;
 }
 
-.logo ul li a::after{
-    content: '';
+.logo ul li a::after {
+    content: "";
     width: 0%;
     height: 2px;
     background: pink;
@@ -70,11 +73,11 @@ nav{
     margin: auto;
     transition: 0.5s;
 }
-.logo ul li a:hover::after{
+.logo ul li a:hover::after {
     width: 100%;
 }
 
-h2{
+h2 {
     color: whitesmoke;
     text-shadow: 1px 1px black;
     /* text-align: center; */
@@ -85,7 +88,7 @@ h2{
     align-items: center;
     font-size: 9vh;
 }
-h4{
+h4 {
     color: whitesmoke;
     text-shadow: 1px solid black;
     font-size: 1.5vh;
@@ -96,35 +99,36 @@ h4{
     /* padding-right: 4vh; */
 }
 
-.pay{
+.pay {
     display: flex;
     flex-direction: column;
     position: relative;
 }
-form{
+form {
     position: relative;
     width: 90%;
     max-width: 600px;
     margin-left: 2.5vh;
 }
 
-.input_box i{
+.input_box i {
     display: none;
 }
 
-.input_box p{
+.input_box p {
     font-size: 1vh;
     color: crimson;
     display: none;
 }
-.input_box{
+.input_box {
     padding: 0.3vh;
     /* padding-left: 4vh; */
     text-align: center;
     padding-top: 1vh;
 }
 
-input, textarea{
+input,
+textarea {
     background-color: transparent;
     border: whitesmoke;
     color: whitesmoke;
@@ -133,7 +137,8 @@ input, textarea{
     padding-left: 2vh;
     padding-right: 2vh;
 }
-button, textarea{
+button,
+textarea {
     background-color: transparent;
     border: whitesmoke;
     color: whitesmoke;
@@ -142,37 +147,42 @@ button, textarea{
     padding-left: 2vh;
     padding-right: 2vh;
 }
-input:hover{
+input:hover {
     transition: 0.5s;
-    background-color:rgb(27, 25, 27);
-}   
-button:hover{
+    background-color: rgb(27, 25, 27);
+}
+button:hover {
     transition: 0.5s;
-    background-color:rgb(27, 25, 27);
-} 
-::placeholder{
+    background-color: rgb(27, 25, 27);
+}
+::placeholder {
     color: whitesmoke;
 }
-.login{
+.login {
     color: whitesmoke;
     font-size: 1.7vh;
     text-align: center;
     margin-right: 0.5vw;
 }
 
-#submit{
+#submit {
     padding-top: 0.5vh;
     padding-bottom: 0.5vh;
-   text-align: center;
+    text-align: center;
     margin-top: 1vh;
     margin-right: 1vw;
 }
+#logout {
+    display: flex;
+    flex-direction: column;
+    
+}
 /* footer */
-.sm{
+.sm {
     text-align: center;
     padding-top: 10vh;
 }
-.sm ul li{
+.sm ul li {
     position: relative;
     display: inline-block;
     cursor: pointer;
@@ -184,18 +194,18 @@ button:hover{
     color: whitesmoke;
     text-shadow: 1px 1px black;
 }
-.footer p{
+.footer p {
     color: whitesmoke;
-    text-shadow: 1px 1px black; 
+    text-shadow: 1px 1px black;
     font-size: small;
     padding-top: 1vh;
 }
 
-.sm{
+.sm {
     text-align: center;
     padding-top: 10vh;
 }
-.sm ul li{
+.sm ul li {
     position: relative;
     display: inline-block;
     cursor: pointer;
@@ -206,48 +216,52 @@ button:hover{
     text-shadow: 1px 1px black;
 }
 
-@media(max-width: 600px){
-    body{
-        background-image: linear-gradient(rgba(100, 100, 100, 0.1), rgba(89, 89, 89, 0.1)), url("../css/bg.jpg");
+@media (max-width: 600px) {
+    body {
+        background-image: linear-gradient(
+                rgba(100, 100, 100, 0.1),
+                rgba(89, 89, 89, 0.1)
+            ),
+            url("../css/bg.jpg");
         background-size: cover;
         background-repeat: no-repeat;
         display: flex;
         flex-direction: column;
         justify-content: center;
-        align-items: center; 
+        align-items: center;
     }
-    h2{
+    h2 {
         font-size: 7vh;
-    }  
-    h4{
+    }
+    h4 {
         font-size: 2vh;
         padding-bottom: 3vh;
     }
-    
-    #submit{
+
+    #submit {
         padding-top: 1vh;
-       text-align: center;
-       padding-bottom: 1.5vh;
+        text-align: center;
+        padding-bottom: 1.5vh;
     }
-    .login{
+    .login {
         font-size: 2.3vw;
     }
-    .footer p{
+    .footer p {
         font-size: 2.3vw;
     }
-    .footer{
+    .footer {
         size: 2.3vw;
     }
-    nav{
+    nav {
         position: relative;
         display: flex;
         padding: 1% 3%;
         justify-content: space-between;
         padding-top: 3vh;
         flex-direction: column;
-    } 
-    
-    .logo ul li a{
+    }
+
+    .logo ul li a {
         color: whitesmoke;
         text-decoration: none;
         font-size: 2vh;
@@ -255,17 +269,17 @@ button:hover{
         display: inline-block;
         padding: 4px 16px;
         font-size: 2.5vh;
-    } 
-    
-    .logo ul li{
+    }
+
+    .logo ul li {
         position: relative;
         display: inline-block;
         list-style: none;
         padding: 4px 16px;
         margin-left: 45vh;
     }
-    .logo ul li a::after{
-        content: '';
+    .logo ul li a::after {
+        content: "";
         width: 0%;
         height: 2px;
         background: pink;
@@ -273,7 +287,7 @@ button:hover{
         margin: auto;
         transition: 0.5s;
     }
-    .logo ul li a:hover::after{
+    .logo ul li a:hover::after {
         width: 100%;
     }
 }

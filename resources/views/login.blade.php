@@ -34,11 +34,11 @@
         <div class="pay">
             <h2>Login</h2>
             <h4>Welcome Back!</h4>
-            <form action="/login" method="POST">
+            <form action="/user" method="POST">
                 @csrf
             <div class="username">
                 <div class="input_box">
-                    <input type="email" placeholder="Email" id="Email" name="Email" required>
+                    <input type="email" id="Email" name="Email" value="{{Session::get('Email')}}" placeholder="Email" required>
                     <i class="fa fa-envelope-o" style="color: whitesmoke; display: contents;"></i>
                     <!-- <i class="fa fa-check-circle" style="color: chartreuse"></i>
                     <i class="fa fa-exclamation-circle" style="color: crimson;"></i>
@@ -47,7 +47,7 @@
             </div>
             <div class="Pass">
                 <div class="input_box">
-                    <input type="password" placeholder="Password" id="password" name="Password" required class="password">
+                    <input type="password" placeholder="Password" id="password" name="password" required class="password">
                     <i class="fa fa-eye" id="show-password" style="color: whitesmoke; display: contents;"></i>
                     <!-- <i class="fa fa-check-circle" style="color: chartreuse"></i>
                     <i class="fa fa-exclamation-circle" style="color: crimson;"></i>
