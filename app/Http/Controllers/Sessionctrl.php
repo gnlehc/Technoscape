@@ -35,7 +35,7 @@ class Sessionctrl extends Controller
         ];
 
         if(Auth::attempt($infoLogin)){
-            return redirect('dashboard')->with("Welcome");
+            return redirect('user')->with("Welcome");
         }else{
             return redirect('login')->withErrors('Email or Password does not valid');
         }
@@ -79,7 +79,7 @@ class Sessionctrl extends Controller
             'password' => $request->password
         ];
         if(Auth::attempt($infoLogin)){
-            return redirect('dashboard')->with("Welcome", Auth::user()-> Name);
+            return redirect('user')->with("Welcome", Auth::user()-> Name);
         }else{
             return redirect('register')->withErrors('Email or Password does not valid');
         }

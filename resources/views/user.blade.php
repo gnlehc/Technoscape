@@ -17,25 +17,12 @@
     </script>
 </head>
 <body>
-    <section>
-        <nav>
-            <!-- <a href=""><img src="tlogo.png" alt=""></a> -->
-            <div class="Logo">
-                <ul>
-                    <li>
-                        <a href="/">Home</a>
-                        <a href="/register">Register</a>
-                        <a href="/login">Login</a>
-                        <a href="/payment">payment</a>
-                    </li>
-                    <!-- <li>
-                        <a href="login.html">Login</a>
-                    </li> -->
-                </ul>
-            </div>
-        </nav>
-    </section>
-    <section>
+    <div class="container py-5">
+      @if(Auth::check())
+      <div class="position-relative py-2 px-2">
+      <a href="{{route('logout')}}" class="py-2 px-2 rounded border-none bg-transparent text-white text-decoration-none">Log Out</a>
+      </div>
+      <section>
         <div class="hello">
             <h1><b>Welcome!</b></h1>
             {{-- @foreach ($accs as $accs) --}}
@@ -64,16 +51,16 @@
                 <tbody>
                     @csrf
                     @method('patch')
-                    @foreach($accs as $accs)
+                    @foreach($users as $users)
                   <tr>
-                    <td>{{$accs->Name}}</td>
-                    <td>{{$accs->Email}}</td>
-                    <td>{{$accs->password}}</td>
-                    <td>{{$accs->Pass}}</td>
-                    <td><a href="{{route('editData', $accs->id)}}" class="btn btn-success">Edit</a></td>
+                    <td>{{$users->Name}}</td>
+                    <td>{{$users->Email}}</td>
+                    <td>{{Str::limit ($users->password, 20)}}</td>  {{-- limit the display --}}
+                    <td>{{Str::limit($users->Pass, 20)}}</td>
+                    <td><a href="{{route('editData', $users->id)}}" class="btn btn-success">Edit</a></td>
                     {{-- <td><button class="btn btn-success">Edit</button></td>
                     <td><button class="btn btn-danger">Delete</button></td> --}}
-                    <form action="{{route('delete', $accs->id)}}" method="POST">
+                    <form action="{{route('delete', $users->id)}}" method="POST">
                       @csrf
                       @method('delete')
                       <td><button class="btn btn-danger">Delete</button></td>
@@ -97,19 +84,19 @@
         </div>
         {{-- @endforeach --}}
     </section>
+      @endif
+    </div>    
     <section class="footer">
-        <div class="sm">
-            <ul style="align-items: center;">
-                <li><a href="https://twitter.com/bncc_binus?lang=en"><i class="fa fa-twitter" style="color: whitesmoke"></i></a></li>
-                <li><a href="https://id-id.facebook.com/bina.nusantara.computer.club/"><i class="fa fa-facebook" style="color: whitesmoke"></i></a></li>
-                <li><a href="https://www.instagram.com/technoscapebncc/"><i class="fa fa-instagram" style="color: whitesmoke"></i></a></li> 
-            </ul>
-            <p>
-               Copyright © 2022 BNCC. All Rights Reserved
-            </p>
-        </div>
-    </section>
-
-        
+      <div class="sm">
+          <ul style="align-items: center;">
+              <li><a href="https://twitter.com/bncc_binus?lang=en"><i class="fa fa-twitter" style="color: whitesmoke"></i></a></li>
+              <li><a href="https://id-id.facebook.com/bina.nusantara.computer.club/"><i class="fa fa-facebook" style="color: whitesmoke"></i></a></li>
+              <li><a href="https://www.instagram.com/technoscapebncc/"><i class="fa fa-instagram" style="color: whitesmoke"></i></a></li> 
+          </ul>
+          <p>
+             Copyright © 2022 BNCC. All Rights Reserved
+          </p>
+      </div>
+  </section>
 </body>
 </html>

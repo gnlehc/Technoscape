@@ -9,7 +9,7 @@
 <body>
     <div class="py-5">
         @if (Auth::check())
-            <h1>Welcome <?php echo $Name; ?></h1>
+            <h1>Welcome</h1>
         @endif
     </div>
 </body>
