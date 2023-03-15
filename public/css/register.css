@@ -113,28 +113,30 @@ form{
     width: 100%; */
 /* } */ 
 
-
+.pay {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
 .input_box{
     padding: 0.3vh;
-    /* padding-left: 6vh; */
-    margin-left: 17vw;
-    text-align: left;
-    /* align-items: center; */
-    /* position: relative; */
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
 }
 
 #submit{
     position: relative;
+    padding-right: 0.5rem;
     padding-top: 1vh;
     padding-bottom: 1vh;
     text-align: center;
-    /* padding-left: 10vh; */
+    justify-content: center;
 }
 .login{
     color: whitesmoke;
     font-size: 1.7vh;
     text-align: center;
-    /* padding-left: 12vh; */
 }
 
 input, textarea{

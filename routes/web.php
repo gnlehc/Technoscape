@@ -1,6 +1,8 @@
 <?php
     
+use App\Http\Controllers\EmailCtrl;
 use App\Http\Controllers\imagectrl;
+use App\Http\Controllers\occupationCtrl;
 use App\Http\Controllers\Sessionctrl;
 use App\Http\Controllers\userctrl;
 use Illuminate\Support\Facades\Route;
@@ -41,3 +43,10 @@ Route::post('/user', [Sessionctrl::class, 'login']);
 Route::post('/login', [Sessionctrl::class, 'logout']);
 Route::post('/create', [Sessionctrl::class, 'create']);
 Route::get('/logout', [Sessionctrl::class, 'logout'])->name('logout');
+
+Route::get('/forgot-password', [Sessionctrl::class, 'forgotPassword']);
+Route::get('/email', [EmailCtrl::class, 'index']);
+
+Route::get('/occupation', [occupationCtrl::class, 'occupation']);
+Route::post('/store-occupation', [occupationCtrl::class, 'storeOccupation']);
+Route::get('/register', [Sessionctrl::class, 'createOccupation']);

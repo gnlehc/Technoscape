@@ -3,10 +3,12 @@
 namespace App\Http\Controllers;
 
 
+use App\Models\occupation;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Password;
 use Illuminate\Support\Facades\Session;
 
 class Sessionctrl extends Controller
@@ -57,6 +59,7 @@ class Sessionctrl extends Controller
             'Email' => 'required|Email|unique:users',
             'password' => 'required|min:6',
             'Pass' => 'required|min:6',
+            'occupationName' => 'required'
         ], 
         [
             'Name.required' => 'Name cannot be empty',
@@ -72,6 +75,7 @@ class Sessionctrl extends Controller
             'Email' => $request->Email,
             'password' => Hash::make($request->password),
             'Pass' => Hash::make($request->Pass),
+            'occupationName' => $request->occupationName,
         ];
         User::create($account);
         $infoLogin = [
@@ -83,5 +87,19 @@ class Sessionctrl extends Controller
         }else{
             return redirect('register')->withErrors('Email or Password does not valid');
         }
+    }
+
+    public function forgotPassword() {
+        return view('forgot-password');
+    }
+
+    function resetPassword (Request $request) {
+        $request->validate(['Email' => 'required | email']);
+
+        $status = Password::sendResetLink($request->only('Email'));
+    }
+    public function createOccupation(){
+        $occupations = occupation::all();
+        return view('register', compact('occupations'));
     }
 }

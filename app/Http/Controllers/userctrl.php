@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\occupation;
 use App\Models\User;
 use Illuminate\Http\Request;
 
@@ -10,7 +11,12 @@ class userctrl extends Controller
     public function user(){
         return view("user");
     }
-
+    
+    public function createOccupation(){
+        $occupations = occupation::all();
+        return view('register', compact('occupations'));
+    }
+    
     public function show(){
         $users = User::all();
         return view('user', compact('users'));
@@ -26,6 +32,7 @@ class userctrl extends Controller
             'Email' => $request->Email,
             'password' => $request->password,
             'Pass' => $request->Pass,
+            'occupation_id' => $request->occupationName,
         ]);
         return redirect('/user');
     }

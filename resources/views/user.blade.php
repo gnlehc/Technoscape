@@ -85,6 +85,10 @@
         {{-- @endforeach --}}
     </section>
       @endif
+      @if(Auth::check() == false)
+      <h1> <a href="/login" style="color: mediumpurple">Login</a> to your account</h1>
+      <p class="text-white items-center text-center">Do not have an account? <a href="/register" style="color: mediumpurple">Register Here</a></p>
+      @endif
     </div>    
     <section class="footer">
       <div class="sm">

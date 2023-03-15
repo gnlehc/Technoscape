@@ -56,6 +56,14 @@
                     <i class="fa fa-eye" id="show-Pass" style="color: whitesmoke;"></i>
                 </div>
             </div>
+            <div class="mb-3">
+                <label for="occupation" class="form-label" style="color: whitesmoke"><b>Occupation</b></label>
+                <select class="form-select py-20 px-20 bold border-none" aria-label="Default select example" style="border-radius: 2rem" name="occupationName">
+                    @foreach ($occupations as $occupation)
+                        <option value="{{$occupation->id}}">{{$occupation->occupationName}}</option>
+                    @endforeach
+                </select>
+            </div>
             <script>
                const showPassword = document.querySelector('#show-password');
                 const PasswordField = document.querySelector('#password');
