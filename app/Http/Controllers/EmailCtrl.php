@@ -8,13 +8,13 @@ use Illuminate\Support\Facades\Mail;
 
 class EmailCtrl extends Controller
 {
-    public function index(){
+    public function sendMail(Request $request){
 
-        $EmailContainer = [
-            'title' => 'Reset Password',
-            'body' => 'Click button below to reset password',
-        ];
-        Mail::to('chelseang40@gmail.com')->send(new sendEmail);
+        // $EmailContainer = [
+        //     'title' => 'Reset Password',
+        //     'body' => 'Click button below to reset password',
+        // ];
+        Mail::to($request->Email)->send(new sendEmail());
         return 'Email Sent Successfully';
     }
 }

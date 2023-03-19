@@ -21,8 +21,8 @@
                   <p>You can reset your password here.</p>
                   <div class="panel-body">
     
-                    <form id="register-form" role="form" autocomplete="off" class="form" method="post">
-    
+                    <form id="register-form" role="form" autocomplete="off" action="/email" class="form" method="post">
+                      @csrf
                       <div class="form-group">
                         <div class="input-group">
                           <span class="input-group-addon"><i class="glyphicon glyphicon-envelope color-blue"></i></span>

@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Session;
 
 class Sessionctrl extends Controller
 {
-    public function index(){
+    public function loginIndex(){
         return view("login");
     }
     public function registIndex(){
@@ -48,9 +48,6 @@ class Sessionctrl extends Controller
         return redirect('login')->with("See you!");
     }
 
-    public function register(){
-        return view('register');
-    }
     function create(Request $request){
         Session::flash('Name', $request->Name);
         Session::flash('Email', $request->Email);
@@ -59,7 +56,7 @@ class Sessionctrl extends Controller
             'Email' => 'required|Email|unique:users',
             'password' => 'required|min:6',
             'Pass' => 'required|min:6',
-            'occupationName' => 'required'
+            'occupation_id' => 'required'
         ], 
         [
             'Name.required' => 'Name cannot be empty',
@@ -75,7 +72,7 @@ class Sessionctrl extends Controller
             'Email' => $request->Email,
             'password' => Hash::make($request->password),
             'Pass' => Hash::make($request->Pass),
-            'occupationName' => $request->occupationName,
+            'occupation_id' => $request->occupation_id,
         ];
         User::create($account);
         $infoLogin = [

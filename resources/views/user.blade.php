@@ -44,6 +44,7 @@
                     <th scope="col">Email</th>
                     <th scope="col">Password</th>
                     <th scope="col">Confirm Password</th>
+                    <th scope="col">Occupation ID</th>
                     <th scope="col">Edit</th>
                     <th scope="col">Delete</th>
                   </tr>
@@ -57,6 +58,7 @@
                     <td>{{$users->Email}}</td>
                     <td>{{Str::limit ($users->password, 20)}}</td>  {{-- limit the display --}}
                     <td>{{Str::limit($users->Pass, 20)}}</td>
+                    <td>{{$users->occupation_id}}</td>
                     <td><a href="{{route('editData', $users->id)}}" class="btn btn-success">Edit</a></td>
                     {{-- <td><button class="btn btn-success">Edit</button></td>
                     <td><button class="btn btn-danger">Delete</button></td> --}}

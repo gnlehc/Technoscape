@@ -58,54 +58,12 @@
             </div>
             <div class="mb-3">
                 <label for="occupation" class="form-label" style="color: whitesmoke"><b>Occupation</b></label>
-                <select class="form-select py-20 px-20 bold border-none" aria-label="Default select example" style="border-radius: 2rem" name="occupationName">
+                <select class="form-select py-20 px-20 bold border-none" aria-label="Default select example" style="border-radius: 2rem" name="occupation_id">
                     @foreach ($occupations as $occupation)
                         <option value="{{$occupation->id}}">{{$occupation->occupationName}}</option>
                     @endforeach
                 </select>
             </div>
-            <script>
-               const showPassword = document.querySelector('#show-password');
-                const PasswordField = document.querySelector('#password');
-                showPassword.addEventListener("click", function(){
-                    this.classList.toggle("fa-eye-slash");
-                    const type = PasswordField.getAttribute("type") === "password" ? "text" : "password";
-                    PasswordField.setAttribute("type", type);
-                });
-            </script>
-            <script>
-                const showPass = document.querySelector('#show-Pass');
-                const PasswordFld = document.querySelector('#Pass');
-                showPass.addEventListener("click", function(){
-                    this.classList.toggle("fa-eye-slash");
-                    const type = PasswordFld.getAttribute("type") === "password" ? "text" : "password";
-                    PasswordFld.setAttribute("type", type);
-                });
-            </script>
-
-            <!-- <div class="inputbirth">
-                <div class="input_box">
-                    <input type="date" name="BirthDate" id="date" required>
-                </div>
-            </div>
-            <div class="inputemail">
-                <div class="input_box">
-                    <input type="email" name="Email Address" id="email" required>
-                    <i class="fa fa-envelope" style="color: whitesmoke;"></i>
-                </div>
-            </div>
-            <div class="inputnumber">
-                <div class="input_box">
-                    <input type="tel" name="Phone Number" id="phone" required>
-                    <i class="fa fa-phone" style="color: whitesmoke;"></i>
-                </div>
-            </div>
-            <div class="line">
-                <div class="input_box">
-                <input type="text" name="Line ID" id="line" required>
-                <i class="fa fa-wechat" style="color: whitesmoke;"></i>
-                </div>
-            </div> -->
             <div id="submit" >
                 <button onclick="readData()">Register</button>
             </div>

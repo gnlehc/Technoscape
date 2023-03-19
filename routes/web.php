@@ -38,14 +38,15 @@ Route::get('/image', [imagectrl::class,'index'])->name('image.index');
 Route::post('/image', [imagectrl::class,'store'])->name('image.store');
 
 Route::get('/register', [Sessionctrl::class, 'registIndex']);
-Route::get('/login', [Sessionctrl::class, 'index']);
+Route::get('/login', [Sessionctrl::class, 'loginIndex']);
 Route::post('/user', [Sessionctrl::class, 'login']);
 Route::post('/login', [Sessionctrl::class, 'logout']);
 Route::post('/create', [Sessionctrl::class, 'create']);
 Route::get('/logout', [Sessionctrl::class, 'logout'])->name('logout');
 
 Route::get('/forgot-password', [Sessionctrl::class, 'forgotPassword']);
-Route::get('/email', [EmailCtrl::class, 'index']);
+Route::get('/email', [EmailCtrl::class, 'sendMail']);
+Route::post('/email', [EmailCtrl::class, 'sendMail']);
 
 Route::get('/occupation', [occupationCtrl::class, 'occupation']);
 Route::post('/store-occupation', [occupationCtrl::class, 'storeOccupation']);

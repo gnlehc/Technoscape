@@ -56,7 +56,7 @@ class sendEmail extends Mailable
     {
         return [];
     }
-    // public function build() {
-    //     return $this->view('email');
-    // }
+    public function build() {
+        return $this->view('email');
+    }
 }
