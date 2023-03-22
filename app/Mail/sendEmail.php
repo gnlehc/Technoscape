@@ -20,7 +20,6 @@ class sendEmail extends Mailable
      */
     public function __construct()
     {
-        //
     }
 
     /**
@@ -31,7 +30,7 @@ class sendEmail extends Mailable
     public function envelope()
     {
         return new Envelope(
-            subject: 'Send Email',
+            subject: 'Reset Password',
         );
     }
 

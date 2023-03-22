@@ -21,6 +21,7 @@ return new class extends Migration
             $table->string('Pass');
             $table->unsignedBigInteger('occupation_id');
             $table->foreign('occupation_id')->references('id')->on('occupations');
+            $table->boolean('isAdmin')->default(0);
             $table->rememberToken();
             $table->timestamps();
         });

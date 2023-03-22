@@ -96,6 +96,7 @@ class Sessionctrl extends Controller
         $status = Password::sendResetLink($request->only('Email'));
     }
     public function createOccupation(){
+        // $this->authorize('isAdmin');
         $occupations = occupation::all();
         return view('register', compact('occupations'));
     }

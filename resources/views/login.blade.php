@@ -70,7 +70,7 @@
                <p>Don't have an account yet? <a href="/register" style="color: mediumpurple;">Register</a> now!</p> 
             </div>
             <div class="login">
-               <p><a href="/forgot-password" style="color: mediumpurple;">Forgot Password</a></p> 
+               <p><a href="/forgot-password" style="color: mediumpurple;">Forgot Password?</a></p> 
             </div>
         </form>
             </div>

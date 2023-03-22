@@ -48,6 +48,6 @@ Route::get('/forgot-password', [Sessionctrl::class, 'forgotPassword']);
 Route::get('/email', [EmailCtrl::class, 'sendMail']);
 Route::post('/email', [EmailCtrl::class, 'sendMail']);
 
-Route::get('/occupation', [occupationCtrl::class, 'occupation']);
+Route::get('/occupation', [occupationCtrl::class, 'occupation'])->middleware('isAdmin');
 Route::post('/store-occupation', [occupationCtrl::class, 'storeOccupation']);
 Route::get('/register', [Sessionctrl::class, 'createOccupation']);
