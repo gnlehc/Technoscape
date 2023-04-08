@@ -37,8 +37,8 @@ Route::delete('/delete/{id}', [userctrl::class, 'delete'])->name('delete');
 Route::get('/image', [imagectrl::class,'index'])->name('image.index');
 Route::post('/image', [imagectrl::class,'store'])->name('image.store');
 
-Route::get('/register', [Sessionctrl::class, 'registIndex']);
-Route::get('/login', [Sessionctrl::class, 'loginIndex']);
+Route::get('/register', [Sessionctrl::class, 'registIndex'])->middleware('guest');
+Route::get('/login', [Sessionctrl::class, 'loginIndex'])->middleware('isLogin');
 Route::post('/user', [Sessionctrl::class, 'login']);
 Route::post('/login', [Sessionctrl::class, 'logout']);
 Route::post('/create', [Sessionctrl::class, 'create']);
@@ -51,3 +51,5 @@ Route::post('/email', [EmailCtrl::class, 'sendMail']);
 Route::get('/occupation', [occupationCtrl::class, 'occupation'])->middleware('isAdmin');
 Route::post('/store-occupation', [occupationCtrl::class, 'storeOccupation']);
 Route::get('/register', [Sessionctrl::class, 'createOccupation']);
+
+Route::get('/account', [Sessionctrl::class, 'dual']);

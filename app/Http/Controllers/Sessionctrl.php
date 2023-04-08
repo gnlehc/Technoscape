@@ -11,8 +11,14 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Password;
 use Illuminate\Support\Facades\Session;
 
+
 class Sessionctrl extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('guest');
+    }
     public function loginIndex(){
         return view("login");
     }
@@ -99,5 +105,9 @@ class Sessionctrl extends Controller
         // $this->authorize('isAdmin');
         $occupations = occupation::all();
         return view('register', compact('occupations'));
+    }
+
+    public function dual(){
+        return view('account');
     }
 }

@@ -12,7 +12,7 @@ class paymentctrl extends Controller
     }
     public function storePay(Request $request){
 
-        $validated = $request->validate([
+        $request->validate([
             // 'Name' => 'required|unique',
             'image' => 'required|mimes:jpg,png'
         ]);
