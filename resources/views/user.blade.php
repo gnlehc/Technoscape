@@ -44,7 +44,7 @@
                     <th scope="col">Email</th>
                     <th scope="col">Password</th>
                     <th scope="col">Confirm Password</th>
-                    <th scope="col">Occupation ID</th>
+                    <th scope="col">Occupation</th>
                     <th scope="col">Edit</th>
                     <th scope="col">Delete</th>
                   </tr>
@@ -58,7 +58,7 @@
                     <td>{{$users->Email}}</td>
                     <td>{{Str::limit ($users->password, 20)}}</td>  {{-- limit the display --}}
                     <td>{{Str::limit($users->Pass, 20)}}</td>
-                    <td>{{$users->occupation_id}}</td>
+                    <td>{{$users->occupation->occupationName}}</td>
                     <td><a href="{{route('editData', $users->id)}}" class="btn btn-success">Edit</a></td>
                     {{-- <td><button class="btn btn-success">Edit</button></td>
                     <td><button class="btn btn-danger">Delete</button></td> --}}
@@ -91,13 +91,13 @@
       <h1> <a href="/login" style="color: mediumpurple">Login</a> to your account</h1>
       <p class="text-white items-center text-center">Do not have an account? <a href="/register" style="color: mediumpurple">Register Here</a></p>
       @endif
-    </div>    
+    </div>
     <section class="footer">
       <div class="sm">
           <ul style="align-items: center;">
               <li><a href="https://twitter.com/bncc_binus?lang=en"><i class="fa fa-twitter" style="color: whitesmoke"></i></a></li>
               <li><a href="https://id-id.facebook.com/bina.nusantara.computer.club/"><i class="fa fa-facebook" style="color: whitesmoke"></i></a></li>
-              <li><a href="https://www.instagram.com/technoscapebncc/"><i class="fa fa-instagram" style="color: whitesmoke"></i></a></li> 
+              <li><a href="https://www.instagram.com/technoscapebncc/"><i class="fa fa-instagram" style="color: whitesmoke"></i></a></li>
           </ul>
           <p>
              Copyright © 2022 BNCC. All Rights Reserved

@@ -1,5 +1,5 @@
 <?php
-    
+
 use App\Http\Controllers\EmailCtrl;
 use App\Http\Controllers\imagectrl;
 use App\Http\Controllers\occupationCtrl;
@@ -8,9 +8,9 @@ use App\Http\Controllers\userctrl;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\registerctrl; // linked with our made controlers
 use App\Http\Controllers\loginctrl;
-use App\Http\Controllers\homectrl; 
-use App\Http\Controllers\paymentctrl; 
-use App\Http\Controllers\dashboardctrl; 
+use App\Http\Controllers\homectrl;
+use App\Http\Controllers\paymentctrl;
+use App\Http\Controllers\dashboardctrl;
 
 
 
@@ -48,7 +48,8 @@ Route::get('/forgot-password', [Sessionctrl::class, 'forgotPassword']);
 Route::get('/email', [EmailCtrl::class, 'sendMail']);
 Route::post('/email', [EmailCtrl::class, 'sendMail']);
 
-Route::get('/occupation', [occupationCtrl::class, 'occupation'])->middleware('isAdmin');
+// Route::get('/occupation', [occupationCtrl::class, 'occupation'])->middleware('isAdmin');
+Route::get('/occupation', [occupationCtrl::class, 'occupation']);
 Route::post('/store-occupation', [occupationCtrl::class, 'storeOccupation']);
 Route::get('/register', [Sessionctrl::class, 'createOccupation']);
 

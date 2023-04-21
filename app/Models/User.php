@@ -26,7 +26,7 @@ class User extends Authenticatable
     ];
 
     public function occupation(){
-        return $this->belongsTo(occupation::class);
+        return $this->belongsTo(occupation::class, 'occupation_id', 'id');
     }
 
     /**
