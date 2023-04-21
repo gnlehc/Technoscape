@@ -6,6 +6,8 @@
 <p>5.Run php artisan migrate</p>
 <p>6.Run php artisan serve</p>
 
+<p>Important Commands</p>
+
 <p>===============================</p>
 
 <p>Laravel Breeze Installation</p>
@@ -17,3 +19,5 @@
 
 <p>php artisan storage:link</p>
 <p>php artisan serve --host 127.0.0.1 --port 80</p>
+
+<p>rm public/storage</p>
