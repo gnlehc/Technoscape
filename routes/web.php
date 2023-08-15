@@ -1,12 +1,12 @@
 <?php
-
+// linked with our made controlers
 use App\Http\Controllers\EmailCtrl;
 use App\Http\Controllers\imagectrl;
 use App\Http\Controllers\occupationCtrl;
 use App\Http\Controllers\Sessionctrl;
 use App\Http\Controllers\userctrl;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\registerctrl; // linked with our made controlers
+use App\Http\Controllers\registerctrl;
 use App\Http\Controllers\loginctrl;
 use App\Http\Controllers\homectrl;
 use App\Http\Controllers\paymentctrl;

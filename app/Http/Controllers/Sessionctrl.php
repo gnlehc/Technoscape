@@ -31,12 +31,12 @@ class Sessionctrl extends Controller
         $request->validate([
             'Email' => 'required',
             'password' => 'required',
-        ], 
+        ],
         [
             'Email.required' => 'Email cannot be empty',
             'password.required' => 'Password cannot be empty',
         ]);
-        
+
         $infoLogin = [
             'Email' => $request->Email,
             'password' => $request->password
@@ -61,9 +61,9 @@ class Sessionctrl extends Controller
             'Name' => 'required',
             'Email' => 'required|Email|unique:users',
             'password' => 'required|min:6',
-            'Pass' => 'required|min:6',
+            'Pass' => 'required_with:password|min:6|same:password',
             'occupation_id' => 'required'
-        ], 
+        ],
         [
             'Name.required' => 'Name cannot be empty',
             'Email.required' => 'Email cannot be empty',
@@ -72,7 +72,7 @@ class Sessionctrl extends Controller
             'password.required' => 'Password cannot be empty',
             'Pass.required' => 'Confirm cannot be empty',
         ]);
-        
+
         $account = [
             'Name' => $request->Name,
             'Email' => $request->Email,

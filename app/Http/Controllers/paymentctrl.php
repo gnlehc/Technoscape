@@ -7,10 +7,12 @@ use Illuminate\Http\Request;
 
 class paymentctrl extends Controller
 {
-    public function payment(){
+    public function payment()
+    {
         return view("payment");
     }
-    public function storePay(Request $request){
+    public function storePay(Request $request)
+    {
 
         $request->validate([
             // 'Name' => 'required|unique',
@@ -30,15 +32,18 @@ class paymentctrl extends Controller
         ]);
         return redirect('/payflow');
     }
-    public function show(){
+    public function show()
+    {
         $images = image::all();
         return view('payflow', compact('images'));
     }
-    public function editPay($id){
+    public function editPay($id)
+    {
         $img = image::findOrFail($id);
         return view('editPay', compact('img'));
     }
-    public function updatePay(Request $request, $id){
+    public function updatePay(Request $request, $id)
+    {
         image::findOrFail($id)->update([
             'Name' => $request->Name,
             'LName' => $request->LName,
@@ -48,8 +53,9 @@ class paymentctrl extends Controller
         ]);
         return redirect('/payflow');
     }
-    public function deletePay($id){
+    public function deletePay($id)
+    {
         image::destroy($id);
-            return redirect('payflow');
+        return redirect('payflow');
     }
 }
