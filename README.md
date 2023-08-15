@@ -13,6 +13,7 @@
 <p>Laravel Breeze Installation</p>
 <p>composer require laravel/breeze --dev</p>
 <p>php artisan breeze:install</p>
+<p>php artisan migrate:refresh --seed</p>
 <p>Choose blade</p>
 
 <p>===============================</p>
